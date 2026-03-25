@@ -1,0 +1,11 @@
+services:
+  rag-client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - RagApi__BaseUrl=https://rag.infra-prod.activebt.ru
+    restart: unless-stopped
