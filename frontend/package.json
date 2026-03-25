@@ -1,0 +1,14 @@
+{
+  "name": "rag-client-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for RAG Client — static SPA served via Node.js with API proxy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3"
+  }
+}

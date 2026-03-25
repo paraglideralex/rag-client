@@ -41,9 +41,7 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 app.UseCors();
-app.UseStaticFiles();
 app.UseMiddleware<ApiKeyMiddleware>();
 app.MapControllers();
-app.MapFallbackToFile("index.html");
 
 app.Run();

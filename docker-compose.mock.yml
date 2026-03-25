@@ -1,0 +1,19 @@
+# Overrides for local development with mock RAG API.
+# Usage: docker compose -f docker-compose.yml -f docker-compose.mock.yml up --build
+
+services:
+
+  mock:
+    build:
+      context: ./mock/RagApiMock
+      dockerfile: Dockerfile
+    expose:
+      - "7070"
+    environment:
+      - ASPNETCORE_HTTP_PORTS=7070
+
+  backend:
+    environment:
+      - RagApi__BaseUrl=http://mock:7070
+    depends_on:
+      - mock
